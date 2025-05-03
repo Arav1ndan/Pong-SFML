@@ -5,16 +5,11 @@ namespace Core {
 		createGameWindow();
 	}
 	void GameWindowManager::createGameWindow() {
-		game_window->create(sf::VideoMode::getDesktopMode(), game_title, sf::Style::Fullscreen);
+		game_window->create(sf::VideoMode::getDesktopMode(), game_title, sf::Style::Default);
 	}
 	bool GameWindowManager::isGameRunning() {
 		return game_window->isOpen();
 	}
-	/*void GameWindowManager::render() {
-		game_window->clear(sf::Color(200, 50, 50, 255));
-
-		game_window->display();
-	}*/
 	void GameWindowManager::clearGameWindow()
 	{
 		game_window->clear();

@@ -15,7 +15,8 @@ int main()
 
 
     gameWindowManager.initialize();
-    gameWindowManager.initialize();
+    //gameWindowManager.initialize();
+    game_loop_manager->initialize();
     
     
 
