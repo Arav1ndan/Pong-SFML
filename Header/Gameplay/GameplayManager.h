@@ -1,6 +1,7 @@
 #pragma once
 #include "Paddle/Paddle.h"
 #include "Ball/Ball.h"
+#include "Boundary/Boundary.h"
 #include "../../Header/Event/EventManager.h"
 
 using namespace CoustomEvent;
@@ -18,6 +19,7 @@ namespace Gameplay {
 		Paddle* player1;
 		Paddle* player2;
 		EventManager* event_manager;
+		Boundary* boundary;
 
 		void initialize();
 
