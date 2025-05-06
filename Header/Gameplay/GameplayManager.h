@@ -25,7 +25,7 @@ namespace Gameplay {
 
 	public:
 		GameplayManager(EventManager* manager);
-		GameplayManager();
+		//GameplayManager();
 		void update();
 		void render(RenderWindow* game_window);
 		
