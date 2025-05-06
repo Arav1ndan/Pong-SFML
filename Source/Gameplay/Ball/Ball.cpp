@@ -22,17 +22,22 @@ namespace Gameplay {
 	}
 	void Ball::initializeVariables()
 	{
+		
 		pong_ball_sprite.setTexture(pong_ball_texture);
 		pong_ball_sprite.setScale(scale_x, scale_y);
 		pong_ball_sprite.setPosition(position_x, position_y);
+
+
+		current_state = BallState::Idel;
 	}
-	void Ball::move()
+	void Ball::move(TimeService* time_service)
 	{
-		pong_ball_sprite.move(velocity);
+		updateDelayTime(time_service->getDeltaTime());
+		pong_ball_sprite.move(velocity * (time_service->getDeltaTime() * speed_multiplier));
 	}
-	void Ball::update(Paddle* player1, Paddle* player2)
+	void Ball::update(Paddle* player1, Paddle* player2, TimeService* time_server)
 	{
-		move();
+		move(time_server);
 		onCollision(player1, player2);
 	}
 	void Ball::handlePaddleCollision(Paddle* player1, Paddle* player2)
@@ -88,5 +93,19 @@ namespace Gameplay {
 		handleBoundaryCollision();
 		handlePaddleCollision(player1, player2);
 		handleOutofBoundCollision();
+	}
+	void Ball::updateDelayTime(float deltaTime)
+	{
+		if (current_state == BallState::Idel) {
+			elapsed_delay_time += deltaTime;
+
+			if (elapsed_delay_time >= delay_duration)
+			{
+				current_state = BallState::Moving;
+			}
+			else {
+				return;
+			}
+		}
 	}
 }
