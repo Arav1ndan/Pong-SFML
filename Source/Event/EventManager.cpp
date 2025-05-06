@@ -24,4 +24,5 @@ namespace CoustomEvent {
 	{
 		return (sf::Mouse::isButtonPressed(sf::Mouse::Left));
 	}
+	
 } 
