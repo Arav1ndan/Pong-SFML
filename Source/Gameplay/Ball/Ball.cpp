@@ -76,10 +76,12 @@ namespace Gameplay {
 
 		if (ball_bounds.left <= left_boundary)
 		{
+			updateLeftCollisionState(true);
 			reset(); //player 2 scores..
 		}
 		else if (ball_bounds.left + ball_bounds.width >= right_boundary)
 		{
+			updateRightCollisionState(true);
 			reset(); //player 2 scores..
 		}
 	}
@@ -108,4 +110,18 @@ namespace Gameplay {
 			}
 		}
 	}
+	bool Ball::isLeftCollisionOccurred() {
+		return had_left_collision;
+	}
+	bool Ball::isRightCollisionOccurred()
+	{
+		return had_right_collision;
+	}
+	void Ball::updateLeftCollisionState(bool value) {
+		had_left_collision = value;
+	}
+	void Ball::updateRightCollisionState(bool value) {
+		had_right_collision = value;
+	}
+	
 }
