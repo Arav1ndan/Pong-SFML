@@ -141,6 +141,7 @@
     <ClCompile Include="Source\Gameplay\Boundary\Boundary.cpp" />
     <ClCompile Include="Source\Gameplay\GameplayManager.cpp" />
     <ClCompile Include="Source\Gameplay\Paddle\Paddle.cpp" />
+    <ClCompile Include="Source\Sound\SoundManager.cpp" />
     <ClCompile Include="Source\UI\UIService.cpp" />
     <ClCompile Include="Source\Utility\TimeServer.cpp" />
   </ItemGroup>
