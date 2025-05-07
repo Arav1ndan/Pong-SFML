@@ -26,7 +26,7 @@ namespace Gameplay {
 		const float position_x = 615.0f;
 		const float position_y = 335.0f;
 
-		float ball_speed = 0.1f;
+		float ball_speed = 100.0f;
 		Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
 		const float top_boundary = 20.0f;
@@ -44,7 +44,8 @@ namespace Gameplay {
 		float delay_duration = .1f;
 		float elapsed_delay_time = 0.0f;
 		
-		
+		bool had_left_collision = false;
+		bool had_right_collision = false;
 
 		BallState current_state;
 
@@ -56,6 +57,12 @@ namespace Gameplay {
 
 	public:
 		Ball();
+		bool isLeftCollisionOccurred();
+		void updateLeftCollisionState(bool value);
+
+		bool isRightCollisionOccurred();
+		void updateRightCollisionState(bool value);
+
 		void handlePaddleCollision(Paddle* player1, Paddle* player2);
 		void handleBoundaryCollision();
 		void handleOutofBoundCollision();
