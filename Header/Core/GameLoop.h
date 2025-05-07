@@ -18,7 +18,6 @@ namespace Core {
 		GameplayManager* gameplay_manager;
 		GameWindowManager* game_window_manager;
 		EventManager* event_manager;
-		SoundManager* sound_manager;
 
 	public:
 		void initialize();

@@ -8,11 +8,7 @@ namespace Core {
 		//gameplay_manager = new GameplayManager();
 		gameplay_manager = new GameplayManager(event_manager);
 
-		SoundManager::Initialize();
-		
-
 		game_window_manager->initialize();
-		
 	}
 	bool GameLoop::isGameRunning()
 	{
